@@ -1968,7 +1968,6 @@ protected:
     const pg_history_t& orig_history,
     pg_interval_map_t& pi,
     epoch_t epoch,
-    bool same_primary,
     PG::CephPeeringEvtRef evt);
   
   void load_pgs();
@@ -2052,6 +2051,7 @@ protected:
   epoch_t requested_full_first, requested_full_last;
 
   void request_full_map(epoch_t first, epoch_t last);
+  void finish_full_map_request();
   void got_full_map(epoch_t e);
 
   // -- failures --
